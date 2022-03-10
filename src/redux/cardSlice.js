@@ -4,7 +4,8 @@ const initialState = {
   cards: [
     {
       id: '1',
-      cardName: 'Jacob Påhlsson',
+      firstName: 'Jacob',
+      lastName: 'Påhlsson',
       cardNumber: '5555 5555 5555 5555',
       expireMonth: '05',
       expireYear: '25',

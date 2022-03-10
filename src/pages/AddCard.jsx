@@ -2,18 +2,19 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
-import cardSlice, { addNewCard } from "../redux/cardSlice";
+import { addNewCard } from "../redux/cardSlice";
 
-export const AddCard = ({ card }) => {
+export const AddCard = () => {
   let randomNum = Math.random(1, 100000);
   const newCard = {
     id: randomNum,
-    cardName: ``,
-    cardNumber: "",
-    cardMonth: "",
-    cardYear: "",
-    cvv: "",
-    bank: "",
+    firstName: '',
+    lastName: '',
+    cardNumber: '',
+    cardMonth: '',
+    cardYear: '',
+    cvv: '',
+    bank: '',
   };
   const dispatch = useDispatch();
   const history = useHistory();
@@ -51,13 +52,13 @@ export const AddCard = ({ card }) => {
   
   <div class="card__front card__part">
    
-    <p style={{color: 'white'}} class="card__front-logo card__logo">{cards.bank}</p>
+    <p style={{color: 'black'}} class="card__front-logo card__logo">{cards.bank}</p>
     <br />
     <img src="https://w7.pngwing.com/pngs/460/694/png-transparent-iphone-computer-icons-integrated-circuits-chips-subscriber-identity-module-sim-cards-electronics-text-rectangle.png" class="card__front-square card__square" /> 
     <p class="card_numer">{cards.cardNumber}</p>
     <div class="card__space-75">
       <span class="card__label">Card holder</span>
-      <p class="card__info">{cards.cardName}</p>
+      <p class="card__info">{cards.firstName} {cards.lastName}</p>
     </div>
     <div class="card__space-25">
       <span class="card__label">Expires</span>
@@ -89,7 +90,7 @@ export const AddCard = ({ card }) => {
     <p class="card_numerTwo">{cards.cardNumber}</p>
     <div class="card__space-75Two">
       <span class="card__labelTwo">Card holder</span>
-      <p class="card__infoTwo">{cards.cardName}</p>
+      <p class="card__infoTwo">{cards.firstName} {cards.lastName}</p>
     </div>
     <div class="card__space-25Two">
       <span class="card__labelTwo">Expires</span>
@@ -121,7 +122,7 @@ export const AddCard = ({ card }) => {
     <p class="card_numerThree">{cards.cardNumber}</p>
     <div class="card__space-75Three">
       <span class="card__labelThree">Card holder</span>
-      <p class="card__infoTwo">{cards.cardName}</p>
+      <p class="card__infoTwo">{cards.firstName} {cards.lastName}</p>
     </div>
     <div class="card__space-25Three">
       <span class="card__labelThree">Expires</span>
@@ -158,8 +159,12 @@ export const AddCard = ({ card }) => {
   </div>
   <div style={{display: 'flex', flexDirection: 'row'}}>
   <div style={{marginRight: '10px'}} className="form-group">
-    <label className='labels' htmlFor="firstName">Full name</label>
-    <input onChange={handleChange} name="cardName" type="text" className="form-control cardInput" id="cardName" placeholder="Full name" />
+    <label className='labels' htmlFor="firstName">First name</label>
+    <input onChange={handleChange} name="firstName" type="text" className="form-control cardInput" id="firstName" placeholder="First name" />
+  </div>
+  <div style={{marginRight: '10px'}} className="form-group">
+    <label className='labels' htmlFor="lastName">Last name</label>
+    <input onChange={handleChange} name="lastName" type="text" className="form-control cardInput" id="lastName" placeholder="Last name" />
   </div>
   </div>
   <div className='validContainer'>

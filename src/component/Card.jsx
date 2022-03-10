@@ -10,13 +10,13 @@ function Card({ card }) {
   
   <div class="card__front card__part">
    
-    <p style={{color: 'white'}} class="card__front-logo card__logo">{card.bank}</p>
+    <p style={{color: 'black'}} class="card__front-logo card__logo">{card.bank}</p>
     <br />
     <img src="https://w7.pngwing.com/pngs/460/694/png-transparent-iphone-computer-icons-integrated-circuits-chips-subscriber-identity-module-sim-cards-electronics-text-rectangle.png" class="card__front-square card__square" /> 
     <p class="card_numer">{card.cardNumber}</p>
     <div class="card__space-75">
       <span class="card__label">Card holder</span>
-      <p class="card__info">{card.cardName}</p>
+      <p class="card__info">{card.firstName} {card.lastName}</p>
     </div>
     <div class="card__space-25">
       <span class="card__label">Expires</span>
@@ -48,7 +48,7 @@ function Card({ card }) {
     <p class="card_numerTwo">{card.cardNumber}</p>
     <div class="card__space-75Two">
       <span class="card__labelTwo">Card holder</span>
-      <p class="card__infoTwo">{card.cardName}</p>
+      <p class="card__infoTwo">{card.firstName} {card.lastName}</p>
     </div>
     <div class="card__space-25Two">
       <span class="card__labelTwo">Expires</span>
@@ -80,7 +80,7 @@ function Card({ card }) {
     <p class="card_numerThree">{card.cardNumber}</p>
     <div class="card__space-75Three">
       <span class="card__labelThree">Card holder</span>
-      <p class="card__infoTwo">{card.cardName}</p>
+      <p class="card__infoTwo">{card.firstName} {card.lastName}</p>
     </div>
     <div class="card__space-25Three">
       <span class="card__labelThree">Expires</span>

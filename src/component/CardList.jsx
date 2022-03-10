@@ -9,7 +9,7 @@ const CardList = () => {
   return (
     <div>
       <div>
-        <h1 style={{color: 'white'}}>Active Card</h1>
+        <h1 style={{color: 'white', marginBottom: '50px'}}>Active Card</h1>
         {cards.slice(0, 1).map((card, i) => {
           return (
             <div key={i}>
@@ -20,7 +20,7 @@ const CardList = () => {
       </div>
       <div>
         <div>
-          <h2 style={{color: 'white'}}>Unactive Cards</h2>
+          <h2 style={{color: 'white', marginTop: '30px', marginBottom: '30px'}}>Unactive Cards</h2>
           {cards.slice(1, 4).map((card, i) => {
             return (
               <div key={i}>
